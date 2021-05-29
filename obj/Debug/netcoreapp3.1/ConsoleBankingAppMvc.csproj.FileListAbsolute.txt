@@ -1,0 +1,15 @@
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\bin\Debug\netcoreapp3.1\ConsoleBankingAppMvc.exe
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\bin\Debug\netcoreapp3.1\ConsoleBankingAppMvc.deps.json
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\bin\Debug\netcoreapp3.1\ConsoleBankingAppMvc.runtimeconfig.json
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\bin\Debug\netcoreapp3.1\ConsoleBankingAppMvc.runtimeconfig.dev.json
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\bin\Debug\netcoreapp3.1\ConsoleBankingAppMvc.dll
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\bin\Debug\netcoreapp3.1\ConsoleBankingAppMvc.pdb
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.csprojAssemblyReference.cache
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.AssemblyInfoInputs.cache
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.AssemblyInfo.cs
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.csproj.CoreCompileInputs.cache
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.csproj.CopyComplete
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.dll
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.pdb
+C:\Users\micha\source\repos\ConsoleBankingAppMvc\obj\Debug\netcoreapp3.1\ConsoleBankingAppMvc.genruntimeconfig.cache
