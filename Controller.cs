@@ -54,7 +54,7 @@ namespace ConsoleBankingAppMvc
                                 break;
                         }
 
-                        customerInput = new CustomerInput();
+                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.LoginScreen :
@@ -68,11 +68,11 @@ namespace ConsoleBankingAppMvc
                         if (model.LoggedInCustomer != null)
                         {
                             model.LoggedInCustomerAccounts = model.GetCustomerAccountList(model.LoggedInCustomer);
-                            
+
                             view.ActiveScreen = Screens.MainMenuScreen;
                         }
                         
-                        customerInput = new CustomerInput();
+                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.MainMenuScreen :
@@ -85,20 +85,40 @@ namespace ConsoleBankingAppMvc
                         {
                             view.ActiveScreen = Screens.LoginScreen;
                         }
-                            
+
+                        switch (customerInput.keyPress.Key)
+                        {
+                            case ConsoleKey.L:
+                                view.ActiveScreen = Screens.LoginScreen;
+                                break;
+                        }
+                        
+
                         //customerInput = new CustomerInput();
                         break;
 
                     case Screens.AccountScreen:
                         customerInput = view.ShowAccountScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
                         
-                        customerInput = new CustomerInput();
+                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.CreateAccountScreen:
                         customerInput = view.ShowCreateAccountScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
 
-                        customerInput = new CustomerInput();
+                        //customerInput = new CustomerInput();
+                        break;
+
+                    case Screens.DepositScreen:
+                        customerInput = view.ShowDepositScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
+
+                        //customerInput = new CustomerInput();
+                        break;
+
+                    case Screens.WithdrawScreen:
+                        customerInput = view.ShowWithdrawScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
+
+                        //customerInput = new CustomerInput();
                         break;
                 }
             }
@@ -113,7 +133,7 @@ namespace ConsoleBankingAppMvc
         }
 
         // Properties
-        public CustomerInput customerInput;
+        public CustomerInput customerInput { get; set; }
 
         // Fields
         public Bank model;
