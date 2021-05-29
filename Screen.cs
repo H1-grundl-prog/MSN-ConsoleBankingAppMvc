@@ -7,11 +7,13 @@ namespace ConsoleBankingAppMvc
 
     public class Screen
     {
-        public Screen() { }
+        public Screen() 
+        {
+            ActiveScreen = Screens.WelcomeScreen;
+        }
 
         public CustomerInput ShowWelcomeScreen()
         {
-            ActiveScreen = Screens.WelcomeScreen;
             
             Console.WriteLine("Welcome!");
 
@@ -26,7 +28,6 @@ namespace ConsoleBankingAppMvc
 
         public CustomerInput ShowLoginScreen()
         {
-            ActiveScreen = Screens.LoginScreen;
 
             Console.WriteLine("Login");
 
@@ -42,7 +43,6 @@ namespace ConsoleBankingAppMvc
 
         public CustomerInput ShowMainMenuScreen(Customer customer, List<Account> accounts)
         {
-            ActiveScreen = Screens.MainMenuScreen;
 
             Console.WriteLine("Main menu");
 
@@ -60,14 +60,18 @@ namespace ConsoleBankingAppMvc
 
             CustomerInput customerInput = new CustomerInput();
 
-            customerInput.keyPress = Console.ReadKey(false);
+            ConsoleKeyInfo key = Console.ReadKey(false);
+
+            if (char.IsDigit(key.KeyChar))
+            {
+                //customerInput.keyPress = int.Parse(key.KeyChar.ToString());
+            }
 
             return customerInput;
         }
 
         public CustomerInput ShowAccountScreen(Customer customer, List<Account> accounts)
         {
-            ActiveScreen = Screens.AccountScreen;
 
             Console.WriteLine("Accounts");
 
@@ -80,8 +84,20 @@ namespace ConsoleBankingAppMvc
             return customerInput;
         }
 
-        public Screens ActiveScreen { get; set; }
+        public CustomerInput ShowCreateAccountScreen(Customer customer, List<Account> accounts)
+        {
 
-        public Bank bank;
+            Console.WriteLine("Create new account:");
+
+            Console.CursorVisible = true;
+
+            CustomerInput customerInput = new CustomerInput();
+
+            customerInput.textField1 = Console.ReadLine();
+
+            return customerInput;
+        }
+
+        public Screens ActiveScreen { get; set; }
     }
 }

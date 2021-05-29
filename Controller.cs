@@ -94,6 +94,12 @@ namespace ConsoleBankingAppMvc
                         
                         customerInput = new CustomerInput();
                         break;
+
+                    case Screens.CreateAccountScreen:
+                        customerInput = view.ShowCreateAccountScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
+
+                        customerInput = new CustomerInput();
+                        break;
                 }
             }
         }

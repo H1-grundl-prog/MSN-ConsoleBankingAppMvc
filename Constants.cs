@@ -24,6 +24,9 @@ namespace ConsoleBankingAppMvc
         WelcomeScreen,
         LoginScreen,
         MainMenuScreen,
-        AccountScreen
+        AccountScreen,
+        CreateAccountScreen
     }
+
+   
 }
