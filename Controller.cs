@@ -23,14 +23,18 @@ namespace ConsoleBankingAppMvc
 
         public void ProgramInit()
         {
-            model.LoadBankFromFile();
+            SetupCustomersAndAccounts();
+
+            //model.LoadBankFromFile();
 
             Console.SetWindowSize(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
             Console.SetBufferSize(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
             Console.SetWindowPosition(0, 0);
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+
+            Console.CursorVisible = false;
 
             view.ActiveScreen = Screens.WelcomeScreen;
 
@@ -54,7 +58,6 @@ namespace ConsoleBankingAppMvc
                                 break;
                         }
 
-                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.LoginScreen :
@@ -72,7 +75,6 @@ namespace ConsoleBankingAppMvc
                             view.ActiveScreen = Screens.MainMenuScreen;
                         }
                         
-                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.MainMenuScreen :
@@ -93,32 +95,29 @@ namespace ConsoleBankingAppMvc
                                 break;
                         }
                         
-
-                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.AccountScreen:
                         customerInput = view.ShowAccountScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
                         
-                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.CreateAccountScreen:
                         customerInput = view.ShowCreateAccountScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
 
-                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.DepositScreen:
                         customerInput = view.ShowDepositScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
 
-                        //customerInput = new CustomerInput();
                         break;
 
                     case Screens.WithdrawScreen:
                         customerInput = view.ShowWithdrawScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
 
-                        //customerInput = new CustomerInput();
+                        break;
+
+                    default:
                         break;
                 }
             }
@@ -130,6 +129,28 @@ namespace ConsoleBankingAppMvc
             Console.ResetColor();
             Console.Clear();
             Environment.Exit(0);
+        }
+
+        public void SetupCustomersAndAccounts()
+        {
+            // Customers
+            model.CreateCustomer("Arthur Dallas", "1234");
+            model.CreateCustomer("Ellen Ripley", "1234");
+            model.CreateCustomer("Joan Lambert", "1234");
+            model.CreateCustomer("Samuel Brett", "1234");
+            model.CreateCustomer("Gilbert Kane", "1234");
+            model.CreateCustomer("Dennis Parker", "1234");
+            model.CreateCustomer("Ash", "1234");
+
+            // Accounts
+            model.CreateAccountForCustomer("Arthur Dallas", "1234", "Payroll", 500.00, 0.0);
+            model.CreateAccountForCustomer("Ellen Ripley" , "1234", "Payroll", 120000.00, 0.0);
+            model.CreateAccountForCustomer("Joan Lambert" , "1234", "Payroll", 12000.00, 0.0);
+            model.CreateAccountForCustomer("Samuel Brett" , "1234", "Payroll", 1200.00, 0.0);
+            model.CreateAccountForCustomer("Gilbert Kane" , "1234", "Payroll", 120.00, 0.0);
+            model.CreateAccountForCustomer("Dennis Parker", "1234", "Payroll", 12.00, 0.0);
+
+            // Assign accounts to customers
         }
 
         // Properties

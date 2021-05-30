@@ -17,6 +17,14 @@ namespace ConsoleBankingAppMvc
             Balance = 0.0;
             UUID = Guid.NewGuid().ToString();
         }
+        public Account(string description, string accountNumber)
+        {
+            Description = description;
+            AccountNumber = accountNumber;
+            AnnualInterest = 0.0f;
+            Balance = 0.0f;
+            UUID = Guid.NewGuid().ToString();
+        }
 
         public Account(string description, string accountNumber, double balance, double annualInterest)
         {

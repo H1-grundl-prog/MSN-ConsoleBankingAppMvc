@@ -23,6 +23,25 @@ namespace ConsoleBankingAppMvc
 
 
         // Methods
+        public bool AssignAccountToCustomer(string accountUuid, string customerUuid)
+        {
+            // Check that account and customer exist
+            int ai = -1;
+            int ci = -1;
+
+            ai = GetIndexFromAccountUuid(accountUuid);
+            ci = GetIndexFromCustomerUuid(customerUuid);
+
+            // If yes, assign account to user
+            // (Note: One account can be assigned to several users!)
+            if (ai != -1 && ci != -1)
+            {
+                customers[ci].accountNumbers.Add(accounts[ai].AccountNumber);
+                return true;
+            }
+            return false;
+        }
+
         public Customer AttemptToLoginCustomer(CustomerInput customerInput)
         {
             Customer customer = customers.FindLast(c => c.Name == customerInput.textField1 && c.Password == customerInput.textField2);
@@ -32,6 +51,36 @@ namespace ConsoleBankingAppMvc
         public string GenerateAccountNumber()
         {
             return (++nextValidAccountNumber).ToString();
+        }
+
+        public void CreateCustomer(string name, string password)
+        {
+            Customer newCustomer = new Customer(name, password);
+            customers.Add(newCustomer);
+        }
+
+        public void CreateAccountForCustomer(string customerName, string customerPassword, string accountDescription, double balance, double annualInterest)
+        {
+            // Check if customer exists
+            Customer customer = customers.FindLast(c => c.Name == customerName && c.Password == customerPassword);
+
+            // If yes, create new account
+            Account tempAccount = new Account(accountDescription, GenerateAccountNumber(), balance, annualInterest);
+
+            // Add to accounts List
+            accounts.Add(tempAccount);
+
+            // Assign account to customer
+            customer.accountNumbers.Add(tempAccount.AccountNumber);
+        }
+
+        public void CreateAccount(string accountDescription, double balance, double annualInterest)
+        {
+            // Create new account
+            Account tempAccount = new Account(accountDescription, GenerateAccountNumber(), balance, annualInterest);
+
+            // Add to accounts List
+            accounts.Add(tempAccount);
         }
 
         public List<Account> GetCustomerAccountList(Customer customer)
@@ -48,6 +97,23 @@ namespace ConsoleBankingAppMvc
             }
 
             return accountList;
+        }
+
+        public int GetIndexFromAccountUuid(string accountUuid)
+        {
+            int index = -1;
+
+            index = accounts.FindIndex(a => a.UUID == accountUuid);
+
+            return index >= 0 ? index : -1;
+        }
+        public int GetIndexFromCustomerUuid(string userUuid)
+        {
+            int index = -1;
+
+            index = customers.FindIndex(a => a.UUID == userUuid);
+
+            return index >= 0 ? index : -1;
         }
 
         public void LoadBankFromFile()

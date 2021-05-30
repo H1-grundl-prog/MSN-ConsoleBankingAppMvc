@@ -9,10 +9,18 @@ namespace ConsoleBankingAppMvc
     {
         public Screen() { }
 
+        public void InitScreen()
+        {
+            Console.Clear();
+        }
+
         public CustomerInput ShowWelcomeScreen()
         {
             // Display screen
-            Console.WriteLine("Welcome!");
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowMenu();
+            ShowFooter();
 
             // Customer input
             Console.CursorVisible = false;
@@ -27,7 +35,10 @@ namespace ConsoleBankingAppMvc
         public CustomerInput ShowLoginScreen()
         {
             // Display screen
-            Console.WriteLine("Login");
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowMenu();
+            ShowFooter();
 
             // Customer input
             Console.CursorVisible = true;
@@ -43,8 +54,9 @@ namespace ConsoleBankingAppMvc
         public CustomerInput ShowMainMenuScreen(Customer customer, List<Account> accounts)
         {
             // Display screen
-            Console.WriteLine("Main menu");
-
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowMenu();
             Console.CursorVisible = false;
 
             
@@ -57,6 +69,8 @@ namespace ConsoleBankingAppMvc
                 i++;
             }
 
+            ShowFooter();
+
             // Customer input
             CustomerInput customerInput = new CustomerInput();
 
@@ -68,7 +82,10 @@ namespace ConsoleBankingAppMvc
         public CustomerInput ShowAccountScreen(Customer customer, List<Account> accounts)
         {
             // Display screen
-            Console.WriteLine("Accounts");
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowMenu();
+            ShowFooter();
 
             // Customer input
             Console.CursorVisible = false;
@@ -83,8 +100,10 @@ namespace ConsoleBankingAppMvc
         public CustomerInput ShowCreateAccountScreen(Customer customer, List<Account> accounts)
         {
             // Display screen
-            Console.WriteLine("Create new account:");
-
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowMenu();
+            ShowFooter();
 
             // Customer input
             Console.CursorVisible = true;
@@ -99,8 +118,12 @@ namespace ConsoleBankingAppMvc
         public CustomerInput ShowDepositScreen(Customer customer, List<Account> accounts)
         {
             // Display screen
-            Console.WriteLine("Deposit:");
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowMenu();
+            ShowFooter();
 
+            // Customer input
             CustomerInput customerInput = new CustomerInput();
 
             customerInput.keyPress = Console.ReadKey(false);
@@ -110,11 +133,13 @@ namespace ConsoleBankingAppMvc
 
         public CustomerInput ShowWithdrawScreen(Customer customer, List<Account> accounts)
         {
-            ShowHeader(ActiveScreen);
-
             // Display screen
-            Console.WriteLine("Withdraw:");
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowMenu();
+            ShowFooter();
 
+            // Customer input
             CustomerInput customerInput = new CustomerInput();
 
             customerInput.keyPress = Console.ReadKey(false);
@@ -124,19 +149,88 @@ namespace ConsoleBankingAppMvc
 
         public void ShowHeader(Screens screen)
         {
+            Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
+            //Console.WriteLine(new string(' ', Constants.WINDOW_WIDTH));
 
+            switch (screen)
+            {
+                case Screens.WelcomeScreen:
+
+                    Console.WriteLine("                    W E Y L A N D  -  Y U T A N I   C O R P                     ");
+                    Console.WriteLine("                                                                                ");
+                    Console.WriteLine("  ▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓▓▓▓▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓▓▓▓▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒  ");
+                    Console.WriteLine("  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒  ");
+                    Console.WriteLine("    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒    ");
+                    Console.WriteLine("      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒      ");
+                    Console.WriteLine("        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒        ");
+                    Console.WriteLine("          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒          ");
+                    Console.WriteLine("            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒            ");
+                    Console.WriteLine("              ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒              ");
+                    Console.WriteLine("                ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▓▓▓▓▓▓▓▓▓▓▓▓▓   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒                ");
+                    Console.WriteLine("                                                                                ");
+                    Console.WriteLine("               >>  B U I L D I N G   B E T T E R   B A N K S  <<                ");
+                    Console.WriteLine("                                                                                ");
+                    Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
+                    Console.WriteLine("                                                                                ");
+                    Console.WriteLine(" > Please insert credit card.                                                   ");
+                    break;
+
+                default:
+
+                    Console.WriteLine("                    W E Y L A N D  -  Y U T A N I   C O R P                     ");
+                    Console.WriteLine("                                                                                ");
+                    Console.WriteLine("               >>  B U I L D I N G   B E T T E R   B A N K S  <<                ");
+                    Console.WriteLine("                                                                                ");
+                    Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
+                    break;
+
+            }
         }
 
-        public void ShowFooter(Screens screen)
+        public void ShowFooter()
         {
-
+            Console.WriteLine(new string(' ', Constants.WINDOW_WIDTH));
+            Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
         }
 
-        public void ShowMenu(Screens screen)
+        public void ShowMenu()
         {
+            switch(ActiveScreen)
+            {
+                case Screens.WelcomeScreen:
 
+                    break;
+
+                case Screens.LoginScreen:
+
+                    break;
+
+                case Screens.MainMenuScreen:
+
+                    break;
+
+                case Screens.AccountScreen:
+
+                    break;
+
+                case Screens.CreateAccountScreen:
+
+                    break;
+
+                case Screens.DepositScreen:
+
+                    break;
+
+                case Screens.WithdrawScreen:
+
+                    break;
+
+                default:
+                    break;
+            }
         }
 
+        // Properties
         public Screens ActiveScreen { get; set; }
     }
 }

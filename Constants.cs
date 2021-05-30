@@ -6,7 +6,7 @@ namespace ConsoleBankingAppMvc
 {
     public class Constants
     {
-        public const int WINDOW_WIDTH = 82;
+        public const int WINDOW_WIDTH = 80;
         public const int WINDOW_HEIGHT = 40;
         public const int CURSOR_X_DEFAULT = 1;
         public const int CURSOR_Y_DEFAULT = 1;
