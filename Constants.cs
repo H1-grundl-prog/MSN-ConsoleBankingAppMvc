@@ -8,8 +8,14 @@ namespace ConsoleBankingAppMvc
     {
         public const int WINDOW_WIDTH = 80;
         public const int WINDOW_HEIGHT = 40;
-        public const int CURSOR_X_DEFAULT = 1;
-        public const int CURSOR_Y_DEFAULT = 1;
+        public const int CURSOR_X_DEFAULT = 0;
+        public const int CURSOR_Y_DEFAULT = 8;
+        public const int CURSOR_X_FOOTER = 0;
+        public const int CURSOR_Y_FOOTER = WINDOW_HEIGHT - 12;
+        public const int CURSOR_X_MENU = 0;
+        public const int CURSOR_Y_MENU = WINDOW_HEIGHT - 13;
+        public const int CURSOR_X_LOGIN = 0;
+        public const int CURSOR_Y_LOGIN = 10;
 
         // Console window manipulation (prevent resize and close)
         public const int MF_BYCOMMAND = 0x00000000;
@@ -29,6 +35,4 @@ namespace ConsoleBankingAppMvc
         DepositScreen,
         WithdrawScreen
     }
-
-   
 }

@@ -59,10 +59,10 @@ namespace ConsoleBankingAppMvc
             customers.Add(newCustomer);
         }
 
-        public void CreateAccountForCustomer(string customerName, string customerPassword, string accountDescription, double balance, double annualInterest)
+        public void CreateAccountForCustomer(string customerName, string accountDescription, double balance, double annualInterest)
         {
             // Check if customer exists
-            Customer customer = customers.FindLast(c => c.Name == customerName && c.Password == customerPassword);
+            Customer customer = customers.FindLast(c => c.Name == customerName);
 
             // If yes, create new account
             Account tempAccount = new Account(accountDescription, GenerateAccountNumber(), balance, annualInterest);
@@ -146,6 +146,7 @@ namespace ConsoleBankingAppMvc
         // Properties
         public int nextValidAccountNumber { get; set; }
         public Customer LoggedInCustomer { get; set; }
+        public Account SelectedAccount { get; set; }
         public List<Account> LoggedInCustomerAccounts { get; set; }
 
         // Containers

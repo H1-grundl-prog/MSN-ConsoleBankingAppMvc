@@ -1,121 +1,182 @@
 {
-  "nextValidAccountNumber": 1234567899,
+  "nextValidAccountNumber": 1234567902,
   "LoggedInCustomer": null,
-  "accounts": [
+  "SelectedAccount": {
+    "Description": "Payroll",
+    "AccountNumber": "1234567892",
+    "AnnualInterest": 0.0,
+    "Balance": 220042.0,
+    "UUID": "aaa225bf-d694-4561-a31a-1eb4cf73dd82"
+  },
+  "LoggedInCustomerAccounts": [
     {
-      "Description": "Jordomsejling",
-      "AccountNumber": "1234567891",
-      "AnnualInterest": 1.0,
-      "Balance": 50042.0,
-      "UUID": "b236cce1-5a4e-4d2e-835f-9abd38a568ea"
-    },
-    {
-      "Description": "Pension",
+      "Description": "Payroll",
       "AccountNumber": "1234567892",
-      "AnnualInterest": 0.5,
-      "Balance": 250000.0,
-      "UUID": "f3c5cf70-63d2-44a0-864d-fd8ef6a678ad"
-    },
-    {
-      "Description": "Kassekredit",
-      "AccountNumber": "1234567893",
-      "AnnualInterest": -3.0,
-      "Balance": -35000.0,
-      "UUID": "5d45c75a-d8a3-4b46-bf8b-afb12653b7ed"
-    },
-    {
-      "Description": "Budgetkonto",
-      "AccountNumber": "1234567894",
       "AnnualInterest": 0.0,
-      "Balance": 500.0,
-      "UUID": "80f317f3-c7ea-485c-af22-5b44465621ef"
+      "Balance": 220042.0,
+      "UUID": "aaa225bf-d694-4561-a31a-1eb4cf73dd82"
     },
     {
-      "Description": "Lønkonto",
-      "AccountNumber": "1234567895",
-      "AnnualInterest": 0.0,
-      "Balance": 120000.0,
-      "UUID": "092fcb77-7f7c-4364-b2e8-f0833b946058"
-    },
-    {
-      "Description": "Lønkonto",
-      "AccountNumber": "1234567896",
-      "AnnualInterest": 0.0,
-      "Balance": 12000.0,
-      "UUID": "b7d2f8fc-da87-4d19-a3b9-bd08439d67b7"
-    },
-    {
-      "Description": "Lønkonto",
-      "AccountNumber": "1234567897",
-      "AnnualInterest": 0.0,
-      "Balance": 1200.0,
-      "UUID": "768989db-24e2-4706-84ad-a958cc00acd9"
-    },
-    {
-      "Description": "Lønkonto",
+      "Description": "Bonus",
       "AccountNumber": "1234567898",
       "AnnualInterest": 0.0,
-      "Balance": 120.0,
-      "UUID": "57efe10c-1be2-4669-8364-5afac8c0903b"
+      "Balance": 220000.0,
+      "UUID": "474bfe22-8da0-44a6-820e-d647d5b3a452"
+    }
+  ],
+  "accounts": [
+    {
+      "Description": "Payroll",
+      "AccountNumber": "1234567891",
+      "AnnualInterest": 0.0,
+      "Balance": 500.0,
+      "UUID": "c300284a-ab34-4a95-8a06-d5a27923390c"
     },
     {
-      "Description": "Lønkonto",
-      "AccountNumber": "1234567899",
+      "Description": "Payroll",
+      "AccountNumber": "1234567892",
+      "AnnualInterest": 0.0,
+      "Balance": 220042.0,
+      "UUID": "aaa225bf-d694-4561-a31a-1eb4cf73dd82"
+    },
+    {
+      "Description": "Payroll",
+      "AccountNumber": "1234567893",
+      "AnnualInterest": 0.0,
+      "Balance": 12000.0,
+      "UUID": "5e5cf8de-0dba-4d6e-91f2-bf5d01448b2b"
+    },
+    {
+      "Description": "Payroll",
+      "AccountNumber": "1234567894",
+      "AnnualInterest": 0.0,
+      "Balance": 1200.0,
+      "UUID": "4aa3d1fe-6e86-4a2b-99ac-1e9a8fa48ff1"
+    },
+    {
+      "Description": "Payroll",
+      "AccountNumber": "1234567895",
+      "AnnualInterest": 0.0,
+      "Balance": 120.0,
+      "UUID": "c370ac11-0a5b-41bf-8198-7a42da5652ab"
+    },
+    {
+      "Description": "Payroll",
+      "AccountNumber": "1234567896",
       "AnnualInterest": 0.0,
       "Balance": 12.0,
-      "UUID": "6875246f-4291-4f20-aa4e-4ac0aa237df8"
+      "UUID": "40fe0b93-29ae-48b0-a7e4-a981786d3271"
+    },
+    {
+      "Description": "Bonus",
+      "AccountNumber": "1234567897",
+      "AnnualInterest": 0.0,
+      "Balance": 500.0,
+      "UUID": "f798e006-cb90-4d7f-a943-61e35d51dfd5"
+    },
+    {
+      "Description": "Bonus",
+      "AccountNumber": "1234567898",
+      "AnnualInterest": 0.0,
+      "Balance": 220000.0,
+      "UUID": "474bfe22-8da0-44a6-820e-d647d5b3a452"
+    },
+    {
+      "Description": "Bonus",
+      "AccountNumber": "1234567899",
+      "AnnualInterest": 0.0,
+      "Balance": 12000.0,
+      "UUID": "bcc07a11-f143-4eac-9346-1351b7265370"
+    },
+    {
+      "Description": "Bonus",
+      "AccountNumber": "1234567900",
+      "AnnualInterest": 0.0,
+      "Balance": 1200.0,
+      "UUID": "611cb245-b8ed-421b-bb40-1425189365e9"
+    },
+    {
+      "Description": "Bonus",
+      "AccountNumber": "1234567901",
+      "AnnualInterest": 0.0,
+      "Balance": 120.0,
+      "UUID": "d031fc7c-52ce-4979-806c-5dee569a301d"
+    },
+    {
+      "Description": "Bonus",
+      "AccountNumber": "1234567902",
+      "AnnualInterest": 0.0,
+      "Balance": 12.0,
+      "UUID": "92523474-dbfe-4173-b491-24569927f2f5"
     }
   ],
   "customers": [
     {
-      "Name": "Arne",
+      "Name": "Arthur Dallas",
       "Password": "1234",
       "Address": null,
-      "UUID": "af29da3b-cf0d-4f37-ba70-f3ae5545cb6c",
+      "UUID": "af449551-8f97-4089-86fc-abf701994045",
       "accountNumbers": [
         "1234567891",
-        "1234567895"
-      ]
-    },
-    {
-      "Name": "Bjarne",
-      "Password": "1234",
-      "Address": null,
-      "UUID": "400474b2-d013-4e49-af72-9e1dc8274b41",
-      "accountNumbers": [
-        "1234567892",
-        "1234567896"
-      ]
-    },
-    {
-      "Name": "Carsten",
-      "Password": "1234",
-      "Address": null,
-      "UUID": "a1792dba-e56e-4842-bc12-15fc27e7d4ad",
-      "accountNumbers": [
-        "1234567893",
         "1234567897"
       ]
     },
     {
-      "Name": "Peter Jensen",
+      "Name": "Ellen Ripley",
       "Password": "1234",
       "Address": null,
-      "UUID": "0ca9aeea-c5b9-44b6-b511-dc4aca806f09",
+      "UUID": "cba25982-9bcf-45d0-bb79-3029184ff129",
       "accountNumbers": [
-        "1234567894",
+        "1234567892",
         "1234567898"
       ]
     },
     {
-      "Name": "Petrea Jensen",
+      "Name": "Joan Lambert",
       "Password": "1234",
       "Address": null,
-      "UUID": "22fe9337-d8fd-40f3-b3a8-1e2095e1b71d",
+      "UUID": "2f158330-33ff-4a35-9e8d-7d4bebb53508",
       "accountNumbers": [
-        "1234567894",
+        "1234567893",
         "1234567899"
       ]
+    },
+    {
+      "Name": "Samuel Brett",
+      "Password": "1234",
+      "Address": null,
+      "UUID": "bf1a2c97-65e9-4ff4-98e4-4715b98b2afb",
+      "accountNumbers": [
+        "1234567894",
+        "1234567900"
+      ]
+    },
+    {
+      "Name": "Gilbert Kane",
+      "Password": "1234",
+      "Address": null,
+      "UUID": "d7ad65a0-b3cb-4597-b69c-b973506a4ae5",
+      "accountNumbers": [
+        "1234567895",
+        "1234567901"
+      ]
+    },
+    {
+      "Name": "Dennis Parker",
+      "Password": "1234",
+      "Address": null,
+      "UUID": "92225c26-fe14-4b98-887c-ef23a5355763",
+      "accountNumbers": [
+        "1234567896",
+        "1234567902"
+      ]
+    },
+    {
+      "Name": "Ash",
+      "Password": "1234",
+      "Address": null,
+      "UUID": "562da8b1-97ea-40e9-aa3b-807e1d3c5d52",
+      "accountNumbers": []
     }
   ]
 }
