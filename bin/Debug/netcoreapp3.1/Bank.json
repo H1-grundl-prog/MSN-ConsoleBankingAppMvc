@@ -1,44 +1,44 @@
 {
   "nextValidAccountNumber": 1234567913,
   "LoggedInCustomer": {
-    "Name": "Gilbert Kane",
+    "Name": "Samuel Brett",
     "Password": "1234",
     "Address": null,
-    "UUID": "73b6b6cf-398e-4f76-9fbd-c1758b01b3cb",
+    "UUID": "ca9e0a9e-8f81-4ff2-8669-810837a98df3",
     "AccountNumbers": [
-      "1234567895",
-      "1234567901",
-      "1234567909"
+      "1234567894",
+      "1234567900",
+      "1234567906"
     ]
   },
   "SelectedAccount": {
-    "Description": "Child support",
-    "AccountNumber": "1234567909",
-    "AnnualInterest": 0.3,
-    "Balance": 2000.0,
-    "UUID": "82dba036-da4d-4039-87d5-f6a2393e09b3"
+    "Description": "Right!",
+    "AccountNumber": "1234567906",
+    "AnnualInterest": 0.6,
+    "Balance": 22042.01,
+    "UUID": "66a3cd45-4631-4f56-acae-7b498f6f70ad"
   },
   "LoggedInCustomerAccounts": [
     {
       "Description": "Payroll",
-      "AccountNumber": "1234567895",
+      "AccountNumber": "1234567894",
       "AnnualInterest": 0.0,
-      "Balance": 16035.0,
-      "UUID": "ede19110-4f2f-4732-b06e-44933b1866e1"
+      "Balance": 11000.0,
+      "UUID": "5660cde4-2dee-45f7-8975-acd643958eb0"
     },
     {
       "Description": "Bonus",
-      "AccountNumber": "1234567901",
+      "AccountNumber": "1234567900",
       "AnnualInterest": 0.0,
-      "Balance": 2000.0,
-      "UUID": "87e033b2-6bc9-4ca1-bae3-c1ef2e206a09"
+      "Balance": 0.0,
+      "UUID": "96f4292b-fb85-497f-b82f-40872c9ce649"
     },
     {
-      "Description": "Child support",
-      "AccountNumber": "1234567909",
-      "AnnualInterest": 0.3,
-      "Balance": 2000.0,
-      "UUID": "82dba036-da4d-4039-87d5-f6a2393e09b3"
+      "Description": "Right!",
+      "AccountNumber": "1234567906",
+      "AnnualInterest": 0.6,
+      "Balance": 22042.01,
+      "UUID": "66a3cd45-4631-4f56-acae-7b498f6f70ad"
     }
   ],
   "Accounts": [
@@ -151,7 +151,7 @@
       "Description": "Right!",
       "AccountNumber": "1234567906",
       "AnnualInterest": 0.6,
-      "Balance": 22000.0,
+      "Balance": 22042.01,
       "UUID": "66a3cd45-4631-4f56-acae-7b498f6f70ad"
     },
     {

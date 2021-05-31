@@ -364,7 +364,6 @@ namespace ConsoleBankingAppMvc
 
                 case Screens.LoginScreen:
 
-                    Console.WriteLine(" (E) Exit");
                     break;
 
                 case Screens.MainMenuScreen:
@@ -383,12 +382,10 @@ namespace ConsoleBankingAppMvc
 
                 case Screens.DepositScreen:
 
-                    //Console.WriteLine(" (E) Exit - (L) Logout - (M) Main menu - (A) Account");
                     break;
 
                 case Screens.WithdrawScreen:
 
-                    //Console.WriteLine(" (E) Exit - (L) Logout - (M) Main menu - (A) Account");
                     break;
 
                 default:
