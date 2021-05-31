@@ -237,19 +237,6 @@ namespace ConsoleBankingAppMvc
 
                         view.ActiveScreen = Screens.MainMenuScreen;
 
-                        /*
-                        switch (customerInput.keyPress.Key)
-                        {
-                            case ConsoleKey.E:
-                                ProgramShutDown();
-                                break;
-
-                            case ConsoleKey.L:
-                                view.ActiveScreen = Screens.WelcomeScreen;
-                                break;
-                        }
-                        */
-
                         break;
 
                     case Screens.CreateCustomerScreen:
@@ -263,7 +250,6 @@ namespace ConsoleBankingAppMvc
                         view.ActiveScreen = Screens.WelcomeScreen;
 
                         break;
-
 
                     case Screens.DepositScreen:
                         

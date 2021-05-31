@@ -32,6 +32,7 @@ Programmet er så vidt muligt selvkommenterende, dvs. classes, properties, metho
 navngivet så beskrivende, at kommentarer ikke skulle være nødvendige.
 Algoritmer inde i Methods er kommeteret linje for linje.
 Programmet er opbygget efter MVC princippet med en controller, der styrer og formidler data mellem model(bank) og view(skærm)
+Alle data gemmes og hentes fra Bank.json i bin/debug mappen. Man kan tilføje nye kunder og kontoer direkte i filen.
 
 Funktioner:
 
