@@ -41,7 +41,13 @@ Funktioner:
 -Man kan hæve og indsætte penge
 -Saldo
 
+Reflektion:
+
+Det var en spændende opgave med mange udfordringer. Appen har stadig en del småbugs og begrænsninger.
+Der kan tilføjes en del funktioner, såsom at give andre kunder adgang til ens konti, overføre beløb osv.
+
 Referencer:
+
 https://www.webmatematik.dk/lektioner/matematik-c/funktioner/renteformlen
 https://www.newtonsoft.com/json/help/html/SerializeObject.htm
 https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-5.0
