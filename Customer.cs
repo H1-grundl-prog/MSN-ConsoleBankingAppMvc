@@ -9,7 +9,7 @@ namespace ConsoleBankingAppMvc
         // Constructors
         public Customer()
         {
-            accountNumbers = new List<string>();
+            AccountNumbers = new List<string>();
         }
 
         public Customer(string name, string password)
@@ -18,7 +18,7 @@ namespace ConsoleBankingAppMvc
             Password = password;
             UUID = Guid.NewGuid().ToString();
 
-            accountNumbers = new List<string>();
+            AccountNumbers = new List<string>();
         }
 
         // Properties
@@ -26,6 +26,6 @@ namespace ConsoleBankingAppMvc
         public string Password { get; set; }
         public string Address { get; set; }
         public string UUID { get; set; }
-        public List<string> accountNumbers { get; set; }
+        public List<string> AccountNumbers { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace ConsoleBankingAppMvc
             // (Note: One account can be assigned to several users!)
             if (ai != -1 && ci != -1)
             {
-                customers[ci].accountNumbers.Add(accounts[ai].AccountNumber);
+                customers[ci].AccountNumbers.Add(accounts[ai].AccountNumber);
                 return true;
             }
             return false;
@@ -69,13 +69,13 @@ namespace ConsoleBankingAppMvc
             accounts.Add(tempAccount);
 
             // Assign account to customer
-            customer.accountNumbers.Add(tempAccount.AccountNumber);
+            customer.AccountNumbers.Add(tempAccount.AccountNumber);
         }
 
         public List<Account> GetCustomerAccountList(Customer customer)
         {
             // Get list of account numbers from customer
-            List<string> accountNumbers = customer.accountNumbers;
+            List<string> accountNumbers = customer.AccountNumbers;
 
             List<Account> accountList = new List<Account>();
 

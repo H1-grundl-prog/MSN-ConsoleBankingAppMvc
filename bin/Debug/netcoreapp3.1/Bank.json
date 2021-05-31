@@ -5,13 +5,19 @@
     "Password": "1234",
     "Address": null,
     "UUID": "838fae4f-545d-496a-b0b1-976634ded00f",
-    "accountNumbers": [
+    "AccountNumbers": [
       "1234567893",
       "1234567899",
       "1234567905"
     ]
   },
-  "SelectedAccount": null,
+  "SelectedAccount": {
+    "Description": "Surgery",
+    "AccountNumber": "1234567905",
+    "AnnualInterest": 0.4,
+    "Balance": 7000.0,
+    "UUID": "38fad8d0-2e13-467c-95fa-a7ff70ed6105"
+  },
   "LoggedInCustomerAccounts": [
     {
       "Description": "Payroll",
@@ -204,7 +210,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "6e65b0f7-1495-44de-9e2b-2974651f843d",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567891",
         "1234567897",
         "1234567903",
@@ -216,7 +222,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "608ca24b-be8e-4a1d-9180-eb339779de8f",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567892",
         "1234567898",
         "1234567904",
@@ -228,7 +234,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "838fae4f-545d-496a-b0b1-976634ded00f",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567893",
         "1234567899",
         "1234567905"
@@ -239,7 +245,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "ca9e0a9e-8f81-4ff2-8669-810837a98df3",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567894",
         "1234567900",
         "1234567906"
@@ -250,7 +256,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "73b6b6cf-398e-4f76-9fbd-c1758b01b3cb",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567895",
         "1234567901",
         "1234567909"
@@ -261,7 +267,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "24e22d5e-8192-4171-aecd-8675b5ce3fad",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567896",
         "1234567902",
         "1234567910"
@@ -272,7 +278,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "4e720a06-5bf7-4247-bf41-ff79485a27cb",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567907",
         "1234567908"
       ]
@@ -282,7 +288,7 @@
       "Password": "1234",
       "Address": null,
       "UUID": "d31744df-1afe-456f-a53d-80c3063ae247",
-      "accountNumbers": [
+      "AccountNumbers": [
         "1234567913"
       ]
     }
