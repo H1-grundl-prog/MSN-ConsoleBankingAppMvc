@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace ConsoleBankingAppMvc
 {
@@ -16,8 +14,8 @@ namespace ConsoleBankingAppMvc
 
             LoggedInCustomer = null;
 
-            accounts = new List<Account>();
-            customers = new List<Customer>();
+            Accounts = new List<Account>();
+            Customers = new List<Customer>();
         }
 
         // Methods
@@ -34,7 +32,7 @@ namespace ConsoleBankingAppMvc
             // (Note: One account can be assigned to several users!)
             if (ai != -1 && ci != -1)
             {
-                customers[ci].AccountNumbers.Add(accounts[ai].AccountNumber);
+                Customers[ci].AccountNumbers.Add(Accounts[ai].AccountNumber);
                 return true;
             }
             return false;
@@ -42,7 +40,7 @@ namespace ConsoleBankingAppMvc
 
         public Customer AttemptToLoginCustomer(CustomerInput customerInput)
         {
-            Customer customer = customers.FindLast(c => c.Name == customerInput.textField1 && c.Password == customerInput.textField2);
+            Customer customer = Customers.FindLast(c => c.Name == customerInput.textField1 && c.Password == customerInput.textField2);
 
             return customer != null ? customer : null;
         }
@@ -54,19 +52,19 @@ namespace ConsoleBankingAppMvc
         public void CreateCustomer(string name, string password)
         {
             Customer newCustomer = new Customer(name, password);
-            customers.Add(newCustomer);
+            Customers.Add(newCustomer);
         }
 
         public void CreateAccountForCustomer(string customerName, string accountDescription, double balance, double annualInterest)
         {
             // Check if customer exists
-            Customer customer = customers.FindLast(c => c.Name == customerName);
+            Customer customer = Customers.FindLast(c => c.Name == customerName);
 
             // If yes, create new account
             Account tempAccount = new Account(accountDescription, GenerateAccountNumber(), balance, annualInterest);
 
             // Add to accounts List
-            accounts.Add(tempAccount);
+            Accounts.Add(tempAccount);
 
             // Assign account to customer
             customer.AccountNumbers.Add(tempAccount.AccountNumber);
@@ -82,7 +80,7 @@ namespace ConsoleBankingAppMvc
             // Get list of Accounts assigned to customer
             foreach (string accountNumber in accountNumbers)
             {
-                accountList.Add(accounts.FindLast(a => a.AccountNumber == accountNumber));
+                accountList.Add(Accounts.FindLast(a => a.AccountNumber == accountNumber));
             }
 
             return accountList;
@@ -92,7 +90,7 @@ namespace ConsoleBankingAppMvc
         {
             int index = -1;
 
-            index = accounts.FindIndex(a => a.UUID == accountUuid);
+            index = Accounts.FindIndex(a => a.UUID == accountUuid);
 
             return index >= 0 ? index : -1;
         }
@@ -100,7 +98,7 @@ namespace ConsoleBankingAppMvc
         {
             int index = -1;
 
-            index = customers.FindIndex(a => a.UUID == userUuid);
+            index = Customers.FindIndex(a => a.UUID == userUuid);
 
             return index >= 0 ? index : -1;
         }
@@ -116,8 +114,8 @@ namespace ConsoleBankingAppMvc
             // Assign
             this.nextValidAccountNumber = tempBank.nextValidAccountNumber;
 
-            this.accounts = tempBank.accounts;
-            this.customers = tempBank.customers;
+            this.Accounts = tempBank.Accounts;
+            this.Customers = tempBank.Customers;
         }
 
         public void SaveBankToFile()
@@ -136,7 +134,7 @@ namespace ConsoleBankingAppMvc
         public List<Account> LoggedInCustomerAccounts { get; set; }
 
         // Containers
-        public List<Account> accounts { get; set; }
-        public List<Customer> customers { get; set; }
+        public List<Account> Accounts { get; set; }
+        public List<Customer> Customers { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleBankingAppMvc
 {
@@ -125,9 +124,9 @@ namespace ConsoleBankingAppMvc
             Console.SetCursorPosition(CursorX, CursorY);
 
             string descriptStr = "Description";
-            string balanceStr  = "Balance";
+            string balanceStr = "Balance";
             string interestStr = "Interest (%)";
-            string accountStr  = "Account No.";
+            string accountStr = "Account No.";
 
             string outputHeader = String.Format(" > {0,17}{1,21}{2,19}{3,19}", descriptStr, balanceStr, interestStr, accountStr);
             string outputAccount = String.Format(" > {0,17}{1,21:n2}{2,19:n1}{3,19}", SelectedAccount.Description, SelectedAccount.Balance, SelectedAccount.AnnualInterest, SelectedAccount.AccountNumber);
@@ -275,11 +274,11 @@ namespace ConsoleBankingAppMvc
 
             return customerInput;
         }
-        
+
         public void ShowCustomers(List<Customer> customers)
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            
+
             int n = 1;
             Console.WriteLine(" Choose Customer:\n");
             foreach (Customer customer in customers)
@@ -331,7 +330,7 @@ namespace ConsoleBankingAppMvc
 
         public void ShowFooter()
         {
-            Console.SetCursorPosition( Constants.CURSOR_X_FOOTER, Constants.CURSOR_Y_FOOTER );
+            Console.SetCursorPosition(Constants.CURSOR_X_FOOTER, Constants.CURSOR_Y_FOOTER);
             Console.WriteLine(new string(' ', Constants.WINDOW_WIDTH));
             Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
         }

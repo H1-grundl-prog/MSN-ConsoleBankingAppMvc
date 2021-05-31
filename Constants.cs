@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleBankingAppMvc
+﻿namespace ConsoleBankingAppMvc
 {
     public class Constants
     {

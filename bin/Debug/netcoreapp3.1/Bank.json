@@ -1,47 +1,47 @@
 {
   "nextValidAccountNumber": 1234567913,
   "LoggedInCustomer": {
-    "Name": "Joan Lambert",
+    "Name": "Gilbert Kane",
     "Password": "1234",
     "Address": null,
-    "UUID": "838fae4f-545d-496a-b0b1-976634ded00f",
+    "UUID": "73b6b6cf-398e-4f76-9fbd-c1758b01b3cb",
     "AccountNumbers": [
-      "1234567893",
-      "1234567899",
-      "1234567905"
+      "1234567895",
+      "1234567901",
+      "1234567909"
     ]
   },
   "SelectedAccount": {
-    "Description": "Surgery",
-    "AccountNumber": "1234567905",
-    "AnnualInterest": 0.4,
-    "Balance": 7000.0,
-    "UUID": "38fad8d0-2e13-467c-95fa-a7ff70ed6105"
+    "Description": "Child support",
+    "AccountNumber": "1234567909",
+    "AnnualInterest": 0.3,
+    "Balance": 2000.0,
+    "UUID": "82dba036-da4d-4039-87d5-f6a2393e09b3"
   },
   "LoggedInCustomerAccounts": [
     {
       "Description": "Payroll",
-      "AccountNumber": "1234567893",
+      "AccountNumber": "1234567895",
       "AnnualInterest": 0.0,
-      "Balance": 7000.0,
-      "UUID": "5cceb87a-2590-42bc-a410-424aeb078f11"
+      "Balance": 16035.0,
+      "UUID": "ede19110-4f2f-4732-b06e-44933b1866e1"
     },
     {
       "Description": "Bonus",
-      "AccountNumber": "1234567899",
+      "AccountNumber": "1234567901",
       "AnnualInterest": 0.0,
       "Balance": 2000.0,
-      "UUID": "9a227270-74ed-4778-b1a3-5b958e38f95b"
+      "UUID": "87e033b2-6bc9-4ca1-bae3-c1ef2e206a09"
     },
     {
-      "Description": "Surgery",
-      "AccountNumber": "1234567905",
-      "AnnualInterest": 0.4,
-      "Balance": 7000.0,
-      "UUID": "38fad8d0-2e13-467c-95fa-a7ff70ed6105"
+      "Description": "Child support",
+      "AccountNumber": "1234567909",
+      "AnnualInterest": 0.3,
+      "Balance": 2000.0,
+      "UUID": "82dba036-da4d-4039-87d5-f6a2393e09b3"
     }
   ],
-  "accounts": [
+  "Accounts": [
     {
       "Description": "Payroll",
       "AccountNumber": "1234567891",
@@ -204,7 +204,7 @@
       "UUID": "18705492-5f98-47f8-9673-075f78270b06"
     }
   ],
-  "customers": [
+  "Customers": [
     {
       "Name": "Arthur Dallas",
       "Password": "1234",
