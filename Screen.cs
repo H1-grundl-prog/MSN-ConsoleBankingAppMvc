@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleBankingAppMvc
 {
-
+    // This is the MVC View class
     public class Screen
     {
         public Screen() { }
@@ -166,10 +166,6 @@ namespace ConsoleBankingAppMvc
             Console.SetCursorPosition(depositString.Length + 1, CursorY);
             customerInput.textField1 = Console.ReadLine();
 
-            Console.CursorVisible = false;
-
-            //customerInput.keyPress = Console.ReadKey(false);
-
             return customerInput;
         }
 
@@ -196,10 +192,6 @@ namespace ConsoleBankingAppMvc
 
             Console.SetCursorPosition(withdrawString.Length + 1, CursorY);
             customerInput.textField1 = Console.ReadLine();
-
-            Console.CursorVisible = false;
-
-            //customerInput.keyPress = Console.ReadKey(false);
 
             return customerInput;
         }

@@ -9,7 +9,7 @@ namespace ConsoleBankingAppMvc
             textField1 = new string("");
             textField2 = new string("");
             keyPress = new ConsoleKeyInfo();
-    }
+        }
 
         public string textField1 { get; set; }
         public string textField2 { get; set; }

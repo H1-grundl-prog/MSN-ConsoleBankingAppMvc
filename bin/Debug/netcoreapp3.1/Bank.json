@@ -2,11 +2,11 @@
   "nextValidAccountNumber": 1234567902,
   "LoggedInCustomer": null,
   "SelectedAccount": {
-    "Description": "Payroll",
-    "AccountNumber": "1234567892",
+    "Description": "Bonus",
+    "AccountNumber": "1234567898",
     "AnnualInterest": 0.0,
-    "Balance": 220042.0,
-    "UUID": "aaa225bf-d694-4561-a31a-1eb4cf73dd82"
+    "Balance": 240042.0,
+    "UUID": "474bfe22-8da0-44a6-820e-d647d5b3a452"
   },
   "LoggedInCustomerAccounts": [
     {
@@ -20,7 +20,7 @@
       "Description": "Bonus",
       "AccountNumber": "1234567898",
       "AnnualInterest": 0.0,
-      "Balance": 220000.0,
+      "Balance": 240042.0,
       "UUID": "474bfe22-8da0-44a6-820e-d647d5b3a452"
     }
   ],
@@ -50,14 +50,14 @@
       "Description": "Payroll",
       "AccountNumber": "1234567894",
       "AnnualInterest": 0.0,
-      "Balance": 1200.0,
+      "Balance": 13200.0,
       "UUID": "4aa3d1fe-6e86-4a2b-99ac-1e9a8fa48ff1"
     },
     {
       "Description": "Payroll",
       "AccountNumber": "1234567895",
       "AnnualInterest": 0.0,
-      "Balance": 120.0,
+      "Balance": 162.0,
       "UUID": "c370ac11-0a5b-41bf-8198-7a42da5652ab"
     },
     {
@@ -78,21 +78,21 @@
       "Description": "Bonus",
       "AccountNumber": "1234567898",
       "AnnualInterest": 0.0,
-      "Balance": 220000.0,
+      "Balance": 240042.0,
       "UUID": "474bfe22-8da0-44a6-820e-d647d5b3a452"
     },
     {
       "Description": "Bonus",
       "AccountNumber": "1234567899",
       "AnnualInterest": 0.0,
-      "Balance": 12000.0,
+      "Balance": 4011958.0,
       "UUID": "bcc07a11-f143-4eac-9346-1351b7265370"
     },
     {
       "Description": "Bonus",
       "AccountNumber": "1234567900",
       "AnnualInterest": 0.0,
-      "Balance": 1200.0,
+      "Balance": 4400.0,
       "UUID": "611cb245-b8ed-421b-bb40-1425189365e9"
     },
     {
@@ -106,7 +106,7 @@
       "Description": "Bonus",
       "AccountNumber": "1234567902",
       "AnnualInterest": 0.0,
-      "Balance": 12.0,
+      "Balance": 32054.0,
       "UUID": "92523474-dbfe-4173-b491-24569927f2f5"
     }
   ],

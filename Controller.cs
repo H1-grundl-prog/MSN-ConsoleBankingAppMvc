@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ConsoleBankingAppMvc
 {
+    // This is the MVC controller class.
     public class Controller
     {
         public Controller(Bank bank, Screen screen)
@@ -46,6 +47,7 @@ namespace ConsoleBankingAppMvc
         {
             while(true)
             {
+
                 // Show screens and execute tasks based on customer input
                 switch (view.ActiveScreen)
                 {
@@ -64,6 +66,7 @@ namespace ConsoleBankingAppMvc
                     case Screens.LoginScreen :
                         customerInput = view.ShowLoginScreen(model.customers);
 
+                        model.SelectedAccount = null;
                         model.LoggedInCustomer = null;
                         model.LoggedInCustomerAccounts = null;
 
@@ -86,15 +89,11 @@ namespace ConsoleBankingAppMvc
                         break;
 
                     case Screens.MainMenuScreen :
-                        
-                        if (model.LoggedInCustomer != null)
-                        {
-                            customerInput = view.ShowMainMenuScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
-                        }
-                        else
-                        {
-                            view.ActiveScreen = Screens.LoginScreen;
-                        }
+
+                        model.SelectedAccount = null;
+
+                        customerInput = view.ShowMainMenuScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
+
 
                         int numAccounts = model.LoggedInCustomerAccounts.Count;
 
@@ -207,25 +206,6 @@ namespace ConsoleBankingAppMvc
 
                         view.ActiveScreen = Screens.AccountScreen;
 
-                        switch (customerInput.keyPress.Key)
-                        {
-                            case ConsoleKey.E:
-                                ProgramShutDown();
-                                break;
-
-                            case ConsoleKey.L:
-                                view.ActiveScreen = Screens.WelcomeScreen;
-                                break;
-
-                            case ConsoleKey.M:
-                                view.ActiveScreen = Screens.MainMenuScreen;
-                                break;
-
-                            case ConsoleKey.A:
-                                view.ActiveScreen = Screens.AccountScreen; ;
-                                break;
-                        }
-
                         break;
 
                     case Screens.WithdrawScreen:
@@ -241,25 +221,6 @@ namespace ConsoleBankingAppMvc
                         }
 
                         view.ActiveScreen = Screens.AccountScreen;
-
-                        switch (customerInput.keyPress.Key)
-                        {
-                            case ConsoleKey.E:
-                                ProgramShutDown();
-                                break;
-
-                            case ConsoleKey.L:
-                                view.ActiveScreen = Screens.WelcomeScreen;
-                                break;
-
-                            case ConsoleKey.M:
-                                view.ActiveScreen = Screens.MainMenuScreen;
-                                break;
-
-                            case ConsoleKey.A:
-                                view.ActiveScreen = Screens.AccountScreen;
-                                break;
-                        }
 
                         break;
 

@@ -6,6 +6,7 @@ using System.Text;
 
 namespace ConsoleBankingAppMvc
 {
+    // This is the MVC Model class
     public class Bank
     {
         // Constructors
@@ -18,9 +19,6 @@ namespace ConsoleBankingAppMvc
             accounts = new List<Account>();
             customers = new List<Customer>();
         }
-
-        // Destructor
-
 
         // Methods
         public bool AssignAccountToCustomer(string accountUuid, string customerUuid)
@@ -72,15 +70,6 @@ namespace ConsoleBankingAppMvc
 
             // Assign account to customer
             customer.accountNumbers.Add(tempAccount.AccountNumber);
-        }
-
-        public void CreateAccount(string accountDescription, double balance, double annualInterest)
-        {
-            // Create new account
-            Account tempAccount = new Account(accountDescription, GenerateAccountNumber(), balance, annualInterest);
-
-            // Add to accounts List
-            accounts.Add(tempAccount);
         }
 
         public List<Account> GetCustomerAccountList(Customer customer)
