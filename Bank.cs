@@ -122,9 +122,6 @@ namespace ConsoleBankingAppMvc
 
         public void SaveBankToFile()
         {
-            // 
-            LoggedInCustomer = null;
-
             // Serialize
             string json = JsonConvert.SerializeObject(this, Formatting.Indented);
 
