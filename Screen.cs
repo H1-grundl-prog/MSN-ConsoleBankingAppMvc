@@ -15,6 +15,7 @@ namespace ConsoleBankingAppMvc
             // Initial tasks for all screens
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
+            Console.Title = "Weyland-Yutani Corp - >> Building Better Worlds << - Interplanetary Banking System";
             Console.Clear();
         }
 
@@ -111,7 +112,7 @@ namespace ConsoleBankingAppMvc
             return customerInput;
         }
 
-        public CustomerInput ShowAccountScreen(Customer customer, Account SelectedAccount)
+        public CustomerInput ShowAccountScreen(Customer customer, Account SelectedAccount, List<Customer> customersWithAccess)
         {
             int CursorX = Constants.CURSOR_X_DEFAULT;
             int CursorY = Constants.CURSOR_Y_DEFAULT;
@@ -134,6 +135,8 @@ namespace ConsoleBankingAppMvc
             Console.WriteLine(outputHeader);
             Console.WriteLine(" > ");
             Console.WriteLine(outputAccount);
+
+            ShowCustomersWithAccess(customersWithAccess);
 
             ShowMenu();
             ShowFooter();
@@ -287,7 +290,7 @@ namespace ConsoleBankingAppMvc
             ShowLoggedInCustomerName(customer);
 
             Console.SetCursorPosition(CursorX, CursorY);
-            string accessString = $" > Name of customer who will be granted access to this account:";
+            string accessString = $" > Customer who will be given access to account:";
 
             Console.WriteLine(accessString);
 
@@ -316,6 +319,20 @@ namespace ConsoleBankingAppMvc
             }
         }
 
+        public void ShowCustomersWithAccess(List<Customer> customers)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
+            Console.WriteLine(" > ");
+            Console.WriteLine(" > Customers with access to this account:");
+            Console.WriteLine(" > ");
+
+            foreach (Customer customer in customers)
+            {
+                Console.WriteLine($" > {customer.Name}");
+            }
+        }
+
         public void ShowHeader(Screens screen)
         {
             Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
@@ -340,7 +357,8 @@ namespace ConsoleBankingAppMvc
                     Console.WriteLine("              >>  B U I L D I N G   B E T T E R   W O R L D S  <<               ");
                     Console.WriteLine("                                                                                ");
                     Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
-                    Console.WriteLine(" > Welcome to the Weyland-Yutani banking service.                               ");
+                    Console.WriteLine(" >                                                                              ");
+                    Console.WriteLine(" > Welcome to the Weyland-Yutani interplanetary banking system.                 ");
 
                     break;
 
@@ -383,11 +401,13 @@ namespace ConsoleBankingAppMvc
         {
             Console.SetCursorPosition(Constants.CURSOR_X_MENU, Constants.CURSOR_Y_MENU);
 
+            Console.WriteLine(new string('*', Constants.WINDOW_WIDTH));
+
             switch (ActiveScreen)
             {
                 case Screens.WelcomeScreen:
 
-                    Console.WriteLine(" (E)xit - (L)ogin");
+                    Console.WriteLine(" (E)xit - (L)ogin\n");
                     Console.WriteLine(" (N)ew customer - (D)elete customer");
                     break;
 
@@ -397,14 +417,14 @@ namespace ConsoleBankingAppMvc
 
                 case Screens.MainMenuScreen:
 
-                    Console.WriteLine(" (E)xit - (L)ogout");
+                    Console.WriteLine(" (E)xit - (L)ogout\n");
                     Console.WriteLine(" (N)ew account - (D)elete account - (1-9) Account details");
                     break;
 
                 case Screens.AccountScreen:
 
-                    Console.WriteLine(" (E)xit - (L)ogout - (M)ain menu");
-                    Console.WriteLine(" (D)eposit - (W)ithdraw - (T)ransfer - (G)rant access");
+                    Console.WriteLine(" (E)xit - (L)ogout - (M)ain menu\n");
+                    Console.WriteLine(" (D)eposit - (W)ithdraw - (T)ransfer - (G)ive access - (R)emove access");
                     break;
 
                 case Screens.CreateAccountScreen:

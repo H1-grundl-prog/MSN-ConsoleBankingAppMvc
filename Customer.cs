@@ -20,6 +20,8 @@ namespace ConsoleBankingAppMvc
             AccountNumbers = new List<string>();
         }
 
+        //
+
         // Properties
         public string Name { get; set; }
         public string Password { get; set; }

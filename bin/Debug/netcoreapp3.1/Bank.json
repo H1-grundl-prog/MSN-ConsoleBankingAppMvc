@@ -1,62 +1,8 @@
 {
-  "nextValidAccountNumber": 1234567917,
-  "LoggedInCustomer": {
-    "Name": "Ellen Ripley",
-    "Password": "1234",
-    "Address": null,
-    "UUID": "608ca24b-be8e-4a1d-9180-eb339779de8f",
-    "AccountNumbers": [
-      "1234567892",
-      "1234567898",
-      "1234567904",
-      "1234567911",
-      "1234567914"
-    ]
-  },
-  "SelectedAccount": {
-    "Description": "New account 1",
-    "AccountNumber": "1234567914",
-    "AnnualInterest": 0.0,
-    "Balance": 42.42,
-    "UUID": "166d83da-139a-4f27-bacb-04c2ed77eb1b"
-  },
-  "LoggedInCustomerAccounts": [
-    {
-      "Description": "Payroll",
-      "AccountNumber": "1234567892",
-      "AnnualInterest": 0.0,
-      "Balance": 12000.0,
-      "UUID": "a03aaae3-a77c-4dbb-9c5b-dfe33a2faf4e"
-    },
-    {
-      "Description": "Bonus",
-      "AccountNumber": "1234567898",
-      "AnnualInterest": 0.0,
-      "Balance": 3000.0,
-      "UUID": "5cb7152d-942f-4844-a771-02c226584a2c"
-    },
-    {
-      "Description": "Savings Amanda",
-      "AccountNumber": "1234567904",
-      "AnnualInterest": 0.5,
-      "Balance": 27005.0,
-      "UUID": "63e4bc6c-04de-4c3b-be19-fc60ba215f45"
-    },
-    {
-      "Description": "Retirement",
-      "AccountNumber": "1234567911",
-      "AnnualInterest": 0.0,
-      "Balance": 0.0,
-      "UUID": "1e166ba2-1bf5-45ee-a1d3-d684f6edb3a9"
-    },
-    {
-      "Description": "New account 1",
-      "AccountNumber": "1234567914",
-      "AnnualInterest": 0.0,
-      "Balance": 42.42,
-      "UUID": "166d83da-139a-4f27-bacb-04c2ed77eb1b"
-    }
-  ],
+  "nextValidAccountNumber": 1234567918,
+  "LoggedInCustomer": null,
+  "SelectedAccount": null,
+  "LoggedInCustomerAccounts": null,
   "Accounts": [
     {
       "Description": "Payroll",
@@ -246,6 +192,13 @@
       "AnnualInterest": 0.0,
       "Balance": 100000.0,
       "UUID": "08eb69f9-2547-4ede-97a2-70b2c9295611"
+    },
+    {
+      "Description": "Nostromo crew",
+      "AccountNumber": "1234567918",
+      "AnnualInterest": 0.0,
+      "Balance": 0.0,
+      "UUID": "80492e51-8470-4be0-b424-e2db091fb468"
     }
   ],
   "Customers": [
@@ -258,7 +211,8 @@
         "1234567891",
         "1234567897",
         "1234567903",
-        "1234567912"
+        "1234567912",
+        "1234567918"
       ]
     },
     {
@@ -271,7 +225,8 @@
         "1234567898",
         "1234567904",
         "1234567911",
-        "1234567914"
+        "1234567914",
+        "1234567918"
       ]
     },
     {
@@ -307,7 +262,8 @@
         "1234567909",
         "1234567914",
         "1234567915",
-        "1234567916"
+        "1234567916",
+        "1234567918"
       ]
     },
     {

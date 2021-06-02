@@ -73,7 +73,7 @@ namespace ConsoleBankingAppMvc
         public void DeleteCustomer(string name, string password)
         {
             Customer customer = Customers.FindLast(c => c.Name == name && c.Password == password);
-            
+
             Customers.Remove(customer);
         }
 
@@ -91,6 +91,25 @@ namespace ConsoleBankingAppMvc
             }
 
             return accountList;
+        }
+
+        public List<Customer> GetAccountCustomerList(Account account)
+        {
+            // Returns list of customers with access to account
+            List<Customer> customersWithAccess = new List<Customer>();
+
+            foreach(Customer customer in Customers)
+            {
+                foreach(string accountNumber in customer.AccountNumbers)
+                {
+                    if(accountNumber == account.AccountNumber)
+                    {
+                        customersWithAccess.Add(customer);
+                    }
+                }
+            }
+
+            return customersWithAccess;
         }
 
         public int GetIndexFromAccountUuid(string accountUuid)

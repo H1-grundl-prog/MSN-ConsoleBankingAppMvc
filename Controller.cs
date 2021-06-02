@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleBankingAppMvc
 {
@@ -100,7 +101,6 @@ namespace ConsoleBankingAppMvc
 
                         CustomerInput = view.ShowMainMenuScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
 
-
                         int numAccounts = model.LoggedInCustomerAccounts.Count;
 
                         switch (CustomerInput.keyPress.Key)
@@ -189,13 +189,51 @@ namespace ConsoleBankingAppMvc
                                 }
                                 view.ActiveScreen = Screens.AccountScreen;
                                 break;
+
+                            case ConsoleKey.D7:
+                                if (numAccounts >= 6)
+                                {
+                                    model.SelectedAccount = model.LoggedInCustomerAccounts[6];
+                                }
+                                else
+                                {
+                                    view.ActiveScreen = Screens.MainMenuScreen;
+                                }
+                                view.ActiveScreen = Screens.AccountScreen;
+                                break;
+
+                            case ConsoleKey.D8:
+                                if (numAccounts >= 7)
+                                {
+                                    model.SelectedAccount = model.LoggedInCustomerAccounts[7];
+                                }
+                                else
+                                {
+                                    view.ActiveScreen = Screens.MainMenuScreen;
+                                }
+                                view.ActiveScreen = Screens.AccountScreen;
+                                break;
+
+                            case ConsoleKey.D9:
+                                if (numAccounts >= 8)
+                                {
+                                    model.SelectedAccount = model.LoggedInCustomerAccounts[8];
+                                }
+                                else
+                                {
+                                    view.ActiveScreen = Screens.MainMenuScreen;
+                                }
+                                view.ActiveScreen = Screens.AccountScreen;
+                                break;
                         }
 
                         break;
 
                     case Screens.AccountScreen:
 
-                        CustomerInput = view.ShowAccountScreen(model.LoggedInCustomer, model.SelectedAccount);
+                        List<Customer> customersWithAccess = model.GetAccountCustomerList(model.SelectedAccount);
+
+                        CustomerInput = view.ShowAccountScreen(model.LoggedInCustomer, model.SelectedAccount, customersWithAccess);
 
                         switch (CustomerInput.keyPress.Key)
                         {
@@ -235,6 +273,8 @@ namespace ConsoleBankingAppMvc
                         model.SaveBankToFile();
 
                         model.LoggedInCustomerAccounts = model.GetCustomerAccountList(model.LoggedInCustomer);
+
+                        model.SaveBankToFile();
 
                         view.ActiveScreen = Screens.MainMenuScreen;
 
@@ -285,7 +325,7 @@ namespace ConsoleBankingAppMvc
                         view.ActiveScreen = Screens.AccountScreen;
 
                         break;
-                    
+
                     case Screens.GiveAccessScreen:
 
                         CustomerInput = view.ShowGrantAccessScreen(model.LoggedInCustomer, model.SelectedAccount);
@@ -297,6 +337,8 @@ namespace ConsoleBankingAppMvc
                         string customerUuid = grantedCustomer.UUID;
 
                         model.AssignAccountToCustomer(accountUuid, customerUuid);
+
+                        model.SaveBankToFile();
 
                         view.ActiveScreen = Screens.AccountScreen;
 
@@ -311,6 +353,9 @@ namespace ConsoleBankingAppMvc
 
         public void ProgramShutDown()
         {
+            model.SelectedAccount = null;
+            model.LoggedInCustomer = null;
+            model.LoggedInCustomerAccounts = null;
             model.SaveBankToFile();
             Console.ResetColor();
             Console.Clear();
