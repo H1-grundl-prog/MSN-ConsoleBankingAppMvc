@@ -9,7 +9,7 @@
         public const int CURSOR_X_FOOTER = 0;
         public const int CURSOR_Y_FOOTER = WINDOW_HEIGHT - 15;
         public const int CURSOR_X_MENU = 0;
-        public const int CURSOR_Y_MENU = WINDOW_HEIGHT - 16;
+        public const int CURSOR_Y_MENU = WINDOW_HEIGHT - 17;
         public const int CURSOR_X_LOGIN = 0;
         public const int CURSOR_Y_LOGIN = 11;
         public const int CURSOR_X_LOGGEDINUSER = 0;

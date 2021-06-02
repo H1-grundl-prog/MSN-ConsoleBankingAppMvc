@@ -70,6 +70,13 @@ namespace ConsoleBankingAppMvc
             customer.AccountNumbers.Add(tempAccount.AccountNumber);
         }
 
+        public void DeleteCustomer(string name, string password)
+        {
+            Customer customer = Customers.FindLast(c => c.Name == name && c.Password == password);
+            
+            Customers.Remove(customer);
+        }
+
         public List<Account> GetCustomerAccountList(Customer customer)
         {
             // Get list of account numbers from customer

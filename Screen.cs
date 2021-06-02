@@ -275,6 +275,34 @@ namespace ConsoleBankingAppMvc
             return customerInput;
         }
 
+        public CustomerInput ShowGrantAccessScreen(Customer customer, Account account)
+        {
+            int CursorX = Constants.CURSOR_X_DEFAULT;
+            int CursorY = Constants.CURSOR_Y_DEFAULT;
+
+            // Display screen
+            Console.CursorVisible = true;
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowLoggedInCustomerName(customer);
+
+            Console.SetCursorPosition(CursorX, CursorY);
+            string accessString = $" > Name of customer who will be granted access to this account:";
+
+            Console.WriteLine(accessString);
+
+            ShowMenu();
+            ShowFooter();
+
+            // Customer input
+            CustomerInput customerInput = new CustomerInput();
+
+            Console.SetCursorPosition(accessString.Length + 1, CursorY);
+            customerInput.textField1 = Console.ReadLine();
+
+            return customerInput;
+        }
+
         public void ShowCustomers(List<Customer> customers)
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -359,7 +387,8 @@ namespace ConsoleBankingAppMvc
             {
                 case Screens.WelcomeScreen:
 
-                    Console.WriteLine(" (E) Exit - (L) Login menu - (N) New customer");
+                    Console.WriteLine(" (E)xit - (L)ogin");
+                    Console.WriteLine(" (N)ew customer - (D)elete customer");
                     break;
 
                 case Screens.LoginScreen:
@@ -368,12 +397,14 @@ namespace ConsoleBankingAppMvc
 
                 case Screens.MainMenuScreen:
 
-                    Console.WriteLine(" (E) Exit - (L) Logout - (N) New account - (1-9) Account details");
+                    Console.WriteLine(" (E)xit - (L)ogout");
+                    Console.WriteLine(" (N)ew account - (D)elete account - (1-9) Account details");
                     break;
 
                 case Screens.AccountScreen:
 
-                    Console.WriteLine(" (E) Exit - (L) Logout - (M) Main menu - (D) Deposit - (W) Withdraw");
+                    Console.WriteLine(" (E)xit - (L)ogout - (M)ain menu");
+                    Console.WriteLine(" (D)eposit - (W)ithdraw - (T)ransfer - (G)rant access");
                     break;
 
                 case Screens.CreateAccountScreen:
@@ -404,8 +435,13 @@ namespace ConsoleBankingAppMvc
         MainMenuScreen,
         AccountScreen,
         CreateAccountScreen,
+        DeleteAccountScreen,
         CreateCustomerScreen,
+        DeleteCustomerScreen,
         DepositScreen,
-        WithdrawScreen
+        WithdrawScreen,
+        TransferScreen,
+        GiveAccessScreen,
+        RemoveAccessScreen
     }
 }

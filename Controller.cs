@@ -49,9 +49,9 @@ namespace ConsoleBankingAppMvc
                 {
                     case Screens.WelcomeScreen:
 
-                        customerInput = view.ShowWelcomeScreen();
+                        CustomerInput = view.ShowWelcomeScreen();
 
-                        switch (customerInput.keyPress.Key)
+                        switch (CustomerInput.keyPress.Key)
                         {
                             case ConsoleKey.E:
                                 ProgramShutDown();
@@ -70,13 +70,13 @@ namespace ConsoleBankingAppMvc
 
                     case Screens.LoginScreen:
 
-                        customerInput = view.ShowLoginScreen(model.Customers);
+                        CustomerInput = view.ShowLoginScreen(model.Customers);
 
                         model.SelectedAccount = null;
                         model.LoggedInCustomer = null;
                         model.LoggedInCustomerAccounts = null;
 
-                        model.LoggedInCustomer = model.AttemptToLoginCustomer(customerInput);
+                        model.LoggedInCustomer = model.AttemptToLoginCustomer(CustomerInput);
 
                         if (model.LoggedInCustomer != null)
                         {
@@ -85,7 +85,7 @@ namespace ConsoleBankingAppMvc
                             view.ActiveScreen = Screens.MainMenuScreen;
                         }
 
-                        switch (customerInput.keyPress.Key)
+                        switch (CustomerInput.keyPress.Key)
                         {
                             case ConsoleKey.E:
                                 ProgramShutDown();
@@ -98,12 +98,12 @@ namespace ConsoleBankingAppMvc
 
                         model.SelectedAccount = null;
 
-                        customerInput = view.ShowMainMenuScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
+                        CustomerInput = view.ShowMainMenuScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
 
 
                         int numAccounts = model.LoggedInCustomerAccounts.Count;
 
-                        switch (customerInput.keyPress.Key)
+                        switch (CustomerInput.keyPress.Key)
                         {
                             case ConsoleKey.E:
                                 ProgramShutDown();
@@ -195,9 +195,9 @@ namespace ConsoleBankingAppMvc
 
                     case Screens.AccountScreen:
 
-                        customerInput = view.ShowAccountScreen(model.LoggedInCustomer, model.SelectedAccount);
+                        CustomerInput = view.ShowAccountScreen(model.LoggedInCustomer, model.SelectedAccount);
 
-                        switch (customerInput.keyPress.Key)
+                        switch (CustomerInput.keyPress.Key)
                         {
                             case ConsoleKey.E:
                                 ProgramShutDown();
@@ -218,15 +218,19 @@ namespace ConsoleBankingAppMvc
                             case ConsoleKey.W:
                                 view.ActiveScreen = Screens.WithdrawScreen;
                                 break;
+
+                            case ConsoleKey.G:
+                                view.ActiveScreen = Screens.GiveAccessScreen;
+                                break;
                         }
 
                         break;
 
                     case Screens.CreateAccountScreen:
 
-                        customerInput = view.ShowCreateAccountScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
+                        CustomerInput = view.ShowCreateAccountScreen(model.LoggedInCustomer, model.LoggedInCustomerAccounts);
 
-                        model.CreateAccountForCustomer(model.LoggedInCustomer.Name, customerInput.textField1, 0.0, 0.0);
+                        model.CreateAccountForCustomer(model.LoggedInCustomer.Name, CustomerInput.textField1, 0.0, 0.0);
 
                         model.SaveBankToFile();
 
@@ -238,9 +242,9 @@ namespace ConsoleBankingAppMvc
 
                     case Screens.CreateCustomerScreen:
 
-                        customerInput = view.ShowCreateCustomerScreen();
+                        CustomerInput = view.ShowCreateCustomerScreen();
 
-                        model.CreateCustomer(customerInput.textField1, customerInput.textField2);
+                        model.CreateCustomer(CustomerInput.textField1, CustomerInput.textField2);
 
                         model.SaveBankToFile();
 
@@ -250,9 +254,9 @@ namespace ConsoleBankingAppMvc
 
                     case Screens.DepositScreen:
 
-                        customerInput = view.ShowDepositScreen(model.LoggedInCustomer, model.SelectedAccount);
+                        CustomerInput = view.ShowDepositScreen(model.LoggedInCustomer, model.SelectedAccount);
 
-                        double depositAmount = double.Parse(customerInput.textField1);
+                        double depositAmount = double.Parse(CustomerInput.textField1);
 
                         if (depositAmount >= 0.0)
                         {
@@ -267,9 +271,9 @@ namespace ConsoleBankingAppMvc
 
                     case Screens.WithdrawScreen:
 
-                        customerInput = view.ShowWithdrawScreen(model.LoggedInCustomer, model.SelectedAccount);
+                        CustomerInput = view.ShowWithdrawScreen(model.LoggedInCustomer, model.SelectedAccount);
 
-                        double withdrawAmount = double.Parse(customerInput.textField1);
+                        double withdrawAmount = double.Parse(CustomerInput.textField1);
 
                         if (withdrawAmount >= 0.0 && withdrawAmount <= model.SelectedAccount.Balance)
                         {
@@ -281,8 +285,25 @@ namespace ConsoleBankingAppMvc
                         view.ActiveScreen = Screens.AccountScreen;
 
                         break;
+                    
+                    case Screens.GiveAccessScreen:
+
+                        CustomerInput = view.ShowGrantAccessScreen(model.LoggedInCustomer, model.SelectedAccount);
+
+                        string accountUuid = model.SelectedAccount.UUID;
+
+                        Customer grantedCustomer = model.Customers.FindLast(c => c.Name == CustomerInput.textField1);
+
+                        string customerUuid = grantedCustomer.UUID;
+
+                        model.AssignAccountToCustomer(accountUuid, customerUuid);
+
+                        view.ActiveScreen = Screens.AccountScreen;
+
+                        break;
 
                     default:
+
                         break;
                 }
             }
@@ -335,7 +356,7 @@ namespace ConsoleBankingAppMvc
         }
 
         // Properties
-        public CustomerInput customerInput { get; set; }
+        public CustomerInput CustomerInput { get; set; }
 
         // Fields
         public Bank model;
