@@ -1,8 +1,62 @@
 {
   "nextValidAccountNumber": 1234567918,
-  "LoggedInCustomer": null,
-  "SelectedAccount": null,
-  "LoggedInCustomerAccounts": null,
+  "LoggedInCustomer": {
+    "Name": "Gilbert Kane",
+    "Password": "1234",
+    "Address": null,
+    "UUID": "73b6b6cf-398e-4f76-9fbd-c1758b01b3cb",
+    "AccountNumbers": [
+      "1234567895",
+      "1234567901",
+      "1234567909",
+      "1234567914",
+      "1234567918"
+    ]
+  },
+  "SelectedAccount": {
+    "Description": "New Account 2",
+    "AccountNumber": "1234567915",
+    "AnnualInterest": 0.0,
+    "Balance": 0.0,
+    "UUID": "66f52165-29c8-4b2a-be71-d414f5658203"
+  },
+  "LoggedInCustomerAccounts": [
+    {
+      "Description": "Payroll",
+      "AccountNumber": "1234567895",
+      "AnnualInterest": 0.0,
+      "Balance": 16035.0,
+      "UUID": "ede19110-4f2f-4732-b06e-44933b1866e1"
+    },
+    {
+      "Description": "Bonus",
+      "AccountNumber": "1234567901",
+      "AnnualInterest": 0.0,
+      "Balance": 2000.0,
+      "UUID": "87e033b2-6bc9-4ca1-bae3-c1ef2e206a09"
+    },
+    {
+      "Description": "Child support",
+      "AccountNumber": "1234567909",
+      "AnnualInterest": 0.3,
+      "Balance": 2000.0,
+      "UUID": "82dba036-da4d-4039-87d5-f6a2393e09b3"
+    },
+    {
+      "Description": "New account 1",
+      "AccountNumber": "1234567914",
+      "AnnualInterest": 0.0,
+      "Balance": 42.42,
+      "UUID": "166d83da-139a-4f27-bacb-04c2ed77eb1b"
+    },
+    {
+      "Description": "Nostromo crew",
+      "AccountNumber": "1234567918",
+      "AnnualInterest": 0.0,
+      "Balance": 0.0,
+      "UUID": "80492e51-8470-4be0-b424-e2db091fb468"
+    }
+  ],
   "Accounts": [
     {
       "Description": "Payroll",
@@ -155,7 +209,7 @@
       "Description": "Life insurance",
       "AccountNumber": "1234567912",
       "AnnualInterest": 0.0,
-      "Balance": 0.0,
+      "Balance": 1200000.0,
       "UUID": "be90da08-1a30-45f0-9547-3af91251a4b6"
     },
     {
@@ -225,8 +279,7 @@
         "1234567898",
         "1234567904",
         "1234567911",
-        "1234567914",
-        "1234567918"
+        "1234567914"
       ]
     },
     {
@@ -261,8 +314,6 @@
         "1234567901",
         "1234567909",
         "1234567914",
-        "1234567915",
-        "1234567916",
         "1234567918"
       ]
     },
@@ -285,16 +336,6 @@
       "AccountNumbers": [
         "1234567907",
         "1234567908"
-      ]
-    },
-    {
-      "Name": "Rick Deckard",
-      "Password": "1234",
-      "Address": null,
-      "UUID": "d31744df-1afe-456f-a53d-80c3063ae247",
-      "AccountNumbers": [
-        "1234567913",
-        "1234567917"
       ]
     }
   ]

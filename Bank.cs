@@ -38,6 +38,25 @@ namespace ConsoleBankingAppMvc
             return false;
         }
 
+        public bool RemoveAccountFromCustomer(Account account, Customer customer)
+        {
+            //customer.AccountNumbers.FindLast(a => a == account.AccountNumber);
+            
+
+
+            foreach( string accountNumber in customer.AccountNumbers)
+            {
+                if(accountNumber == account.AccountNumber)
+                {
+                    customer.AccountNumbers.Remove(account.AccountNumber);
+                    break;
+                }
+
+            }
+
+            return true;
+        }
+
         public Customer AttemptToLoginCustomer(CustomerInput customerInput)
         {
             Customer customer = Customers.FindLast(c => c.Name == customerInput.textField1 && c.Password == customerInput.textField2);

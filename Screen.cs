@@ -194,6 +194,8 @@ namespace ConsoleBankingAppMvc
             string nameString = " > Name:";
             string passwordString = " > Password:";
 
+            Console.WriteLine(" > Create customer.");
+            Console.WriteLine(" > ");
             Console.WriteLine(" > Please enter new customer login credentials:");
             Console.WriteLine(" > ");
             Console.WriteLine(nameString);
@@ -208,7 +210,50 @@ namespace ConsoleBankingAppMvc
 
             CustomerInput customerInput = new CustomerInput();
 
-            CursorY += 2;
+            CursorY += 4;
+
+            Console.SetCursorPosition(nameString.Length + 1, CursorY);
+            customerInput.textField1 = Console.ReadLine();
+
+            CursorY++;
+
+            Console.SetCursorPosition(passwordString.Length + 1, CursorY);
+            customerInput.textField2 = Console.ReadLine();
+
+            return customerInput;
+        }
+
+        public CustomerInput ShowDeleteCustomerScreen()
+        {
+            int CursorX = Constants.CURSOR_X_DEFAULT;
+            int CursorY = Constants.CURSOR_Y_DEFAULT;
+
+            // Display screen
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowLoggedInCustomerName(null);
+
+            Console.SetCursorPosition(CursorX, CursorY);
+            string nameString = " > Name:";
+            string passwordString = " > Password:";
+
+            Console.WriteLine(" > Delete customer.");
+            Console.WriteLine(" > ");
+            Console.WriteLine(" > Please enter customer login credentials:");
+            Console.WriteLine(" > ");
+            Console.WriteLine(nameString);
+            Console.WriteLine(passwordString);
+
+            ShowMenu();
+            ShowFooter();
+
+            // Customer input
+            Console.CursorVisible = true;
+            Console.SetCursorPosition(Constants.CURSOR_X_LOGIN, Constants.CURSOR_Y_LOGIN);
+
+            CustomerInput customerInput = new CustomerInput();
+
+            CursorY += 4;
 
             Console.SetCursorPosition(nameString.Length + 1, CursorY);
             customerInput.textField1 = Console.ReadLine();
@@ -278,6 +323,34 @@ namespace ConsoleBankingAppMvc
             return customerInput;
         }
 
+        public CustomerInput ShowTransferScreen(Customer customer, Account account)
+        {
+            int CursorX = Constants.CURSOR_X_DEFAULT;
+            int CursorY = Constants.CURSOR_Y_DEFAULT;
+
+            // Display screen
+            Console.CursorVisible = true;
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowLoggedInCustomerName(customer);
+
+            Console.SetCursorPosition(CursorX, CursorY);
+            string withdrawString = $" > Transfer amount:";
+
+            Console.WriteLine(withdrawString);
+
+            ShowMenu();
+            ShowFooter();
+
+            // Customer input
+            CustomerInput customerInput = new CustomerInput();
+
+            Console.SetCursorPosition(withdrawString.Length + 1, CursorY);
+            customerInput.textField1 = Console.ReadLine();
+
+            return customerInput;
+        }
+
         public CustomerInput ShowGrantAccessScreen(Customer customer, Account account)
         {
             int CursorX = Constants.CURSOR_X_DEFAULT;
@@ -290,7 +363,35 @@ namespace ConsoleBankingAppMvc
             ShowLoggedInCustomerName(customer);
 
             Console.SetCursorPosition(CursorX, CursorY);
-            string accessString = $" > Customer who will be given access to account:";
+            string accessString = $" > Give account access to customer:";
+
+            Console.WriteLine(accessString);
+
+            ShowMenu();
+            ShowFooter();
+
+            // Customer input
+            CustomerInput customerInput = new CustomerInput();
+
+            Console.SetCursorPosition(accessString.Length + 1, CursorY);
+            customerInput.textField1 = Console.ReadLine();
+
+            return customerInput;
+        }
+
+        public CustomerInput ShowRemoveAccessScreen(Customer customer, Account account)
+        {
+            int CursorX = Constants.CURSOR_X_DEFAULT;
+            int CursorY = Constants.CURSOR_Y_DEFAULT;
+
+            // Display screen
+            Console.CursorVisible = true;
+            InitScreen();
+            ShowHeader(ActiveScreen);
+            ShowLoggedInCustomerName(customer);
+
+            Console.SetCursorPosition(CursorX, CursorY);
+            string accessString = $" > Remove account access from customer:";
 
             Console.WriteLine(accessString);
 
@@ -321,8 +422,7 @@ namespace ConsoleBankingAppMvc
 
         public void ShowCustomersWithAccess(List<Customer> customers)
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-
+            Console.WriteLine(" > ");
             Console.WriteLine(" > ");
             Console.WriteLine(" > Customers with access to this account:");
             Console.WriteLine(" > ");

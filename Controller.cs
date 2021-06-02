@@ -65,6 +65,10 @@ namespace ConsoleBankingAppMvc
                             case ConsoleKey.N:
                                 view.ActiveScreen = Screens.CreateCustomerScreen;
                                 break;
+
+                            case ConsoleKey.D:
+                                view.ActiveScreen = Screens.DeleteCustomerScreen;
+                                break;
                         }
 
                         break;
@@ -260,6 +264,10 @@ namespace ConsoleBankingAppMvc
                             case ConsoleKey.G:
                                 view.ActiveScreen = Screens.GiveAccessScreen;
                                 break;
+
+                            case ConsoleKey.R:
+                                view.ActiveScreen = Screens.RemoveAccessScreen;
+                                break;
                         }
 
                         break;
@@ -285,6 +293,18 @@ namespace ConsoleBankingAppMvc
                         CustomerInput = view.ShowCreateCustomerScreen();
 
                         model.CreateCustomer(CustomerInput.textField1, CustomerInput.textField2);
+
+                        model.SaveBankToFile();
+
+                        view.ActiveScreen = Screens.WelcomeScreen;
+
+                        break;
+
+                    case Screens.DeleteCustomerScreen:
+
+                        CustomerInput = view.ShowDeleteCustomerScreen();
+
+                        model.DeleteCustomer(CustomerInput.textField1, CustomerInput.textField2);
 
                         model.SaveBankToFile();
 
@@ -326,6 +346,12 @@ namespace ConsoleBankingAppMvc
 
                         break;
 
+                    case Screens.TransferScreen:
+
+                        CustomerInput = view.ShowTransferScreen(model.LoggedInCustomer, model.SelectedAccount);
+
+                        break;
+
                     case Screens.GiveAccessScreen:
 
                         CustomerInput = view.ShowGrantAccessScreen(model.LoggedInCustomer, model.SelectedAccount);
@@ -337,6 +363,22 @@ namespace ConsoleBankingAppMvc
                         string customerUuid = grantedCustomer.UUID;
 
                         model.AssignAccountToCustomer(accountUuid, customerUuid);
+
+                        model.SaveBankToFile();
+
+                        view.ActiveScreen = Screens.AccountScreen;
+
+                        break;
+
+                    case Screens.RemoveAccessScreen:
+
+                        CustomerInput = view.ShowRemoveAccessScreen(model.LoggedInCustomer, model.SelectedAccount);
+
+                        Customer removedCustomer = model.Customers.FindLast(c => c.Name == CustomerInput.textField1);
+
+                        model.RemoveAccountFromCustomer(model.SelectedAccount, removedCustomer);
+
+                        model.LoggedInCustomerAccounts = model.GetCustomerAccountList(model.LoggedInCustomer);
 
                         model.SaveBankToFile();
 
