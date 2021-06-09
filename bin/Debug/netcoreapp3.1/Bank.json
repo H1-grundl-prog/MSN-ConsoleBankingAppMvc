@@ -1,46 +1,54 @@
 {
-  "nextValidAccountNumber": 1234567918,
+  "nextValidAccountNumber": 1234567919,
   "LoggedInCustomer": {
-    "Name": "Gilbert Kane",
+    "Name": "Ellen Ripley",
     "Password": "1234",
     "Address": null,
-    "UUID": "73b6b6cf-398e-4f76-9fbd-c1758b01b3cb",
+    "UUID": "608ca24b-be8e-4a1d-9180-eb339779de8f",
     "AccountNumbers": [
-      "1234567895",
-      "1234567901",
-      "1234567909",
+      "1234567892",
+      "1234567898",
+      "1234567904",
+      "1234567911",
       "1234567914",
       "1234567918"
     ]
   },
   "SelectedAccount": {
-    "Description": "New Account 2",
-    "AccountNumber": "1234567915",
+    "Description": "Nostromo crew",
+    "AccountNumber": "1234567918",
     "AnnualInterest": 0.0,
-    "Balance": 0.0,
-    "UUID": "66f52165-29c8-4b2a-be71-d414f5658203"
+    "Balance": 4100.0,
+    "UUID": "80492e51-8470-4be0-b424-e2db091fb468"
   },
   "LoggedInCustomerAccounts": [
     {
       "Description": "Payroll",
-      "AccountNumber": "1234567895",
+      "AccountNumber": "1234567892",
       "AnnualInterest": 0.0,
-      "Balance": 16035.0,
-      "UUID": "ede19110-4f2f-4732-b06e-44933b1866e1"
+      "Balance": 12000.0,
+      "UUID": "a03aaae3-a77c-4dbb-9c5b-dfe33a2faf4e"
     },
     {
       "Description": "Bonus",
-      "AccountNumber": "1234567901",
+      "AccountNumber": "1234567898",
       "AnnualInterest": 0.0,
-      "Balance": 2000.0,
-      "UUID": "87e033b2-6bc9-4ca1-bae3-c1ef2e206a09"
+      "Balance": 3000.0,
+      "UUID": "5cb7152d-942f-4844-a771-02c226584a2c"
     },
     {
-      "Description": "Child support",
-      "AccountNumber": "1234567909",
-      "AnnualInterest": 0.3,
-      "Balance": 2000.0,
-      "UUID": "82dba036-da4d-4039-87d5-f6a2393e09b3"
+      "Description": "Savings Amanda",
+      "AccountNumber": "1234567904",
+      "AnnualInterest": 0.5,
+      "Balance": 27005.0,
+      "UUID": "63e4bc6c-04de-4c3b-be19-fc60ba215f45"
+    },
+    {
+      "Description": "Retirement",
+      "AccountNumber": "1234567911",
+      "AnnualInterest": 0.0,
+      "Balance": 0.0,
+      "UUID": "1e166ba2-1bf5-45ee-a1d3-d684f6edb3a9"
     },
     {
       "Description": "New account 1",
@@ -53,7 +61,7 @@
       "Description": "Nostromo crew",
       "AccountNumber": "1234567918",
       "AnnualInterest": 0.0,
-      "Balance": 0.0,
+      "Balance": 4100.0,
       "UUID": "80492e51-8470-4be0-b424-e2db091fb468"
     }
   ],
@@ -251,8 +259,15 @@
       "Description": "Nostromo crew",
       "AccountNumber": "1234567918",
       "AnnualInterest": 0.0,
-      "Balance": 0.0,
+      "Balance": 4100.0,
       "UUID": "80492e51-8470-4be0-b424-e2db091fb468"
+    },
+    {
+      "Description": "For Rachael",
+      "AccountNumber": "1234567919",
+      "AnnualInterest": 0.0,
+      "Balance": 120000.42,
+      "UUID": "81c4077b-b2bd-4dd0-8cde-9ce158200d4c"
     }
   ],
   "Customers": [
@@ -279,7 +294,8 @@
         "1234567898",
         "1234567904",
         "1234567911",
-        "1234567914"
+        "1234567914",
+        "1234567918"
       ]
     },
     {
@@ -290,7 +306,8 @@
       "AccountNumbers": [
         "1234567893",
         "1234567899",
-        "1234567905"
+        "1234567905",
+        "1234567918"
       ]
     },
     {
@@ -335,7 +352,17 @@
       "UUID": "4e720a06-5bf7-4247-bf41-ff79485a27cb",
       "AccountNumbers": [
         "1234567907",
-        "1234567908"
+        "1234567908",
+        "1234567918"
+      ]
+    },
+    {
+      "Name": "Rick Deckard",
+      "Password": "1234",
+      "Address": null,
+      "UUID": "093aa2f6-919c-4477-b88b-d25e7dc852eb",
+      "AccountNumbers": [
+        "1234567919"
       ]
     }
   ]

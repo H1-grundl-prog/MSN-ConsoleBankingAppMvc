@@ -407,7 +407,7 @@ namespace ConsoleBankingAppMvc
         public void SetupCustomersAndAccounts()
         {
             // First-time setup of customers and accounts
-
+            
             // Customers
             model.CreateCustomer("Arthur Dallas", "1234");
             model.CreateCustomer("Ellen Ripley", "1234");
