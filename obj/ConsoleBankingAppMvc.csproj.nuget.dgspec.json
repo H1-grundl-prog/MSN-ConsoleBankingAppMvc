@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\micha\\source\\repos\\ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj": {}
+    "C:\\Users\\micha\\src\\MSN-ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\micha\\source\\repos\\ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj": {
+    "C:\\Users\\micha\\src\\MSN-ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\micha\\source\\repos\\ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj",
+        "projectUniqueName": "C:\\Users\\micha\\src\\MSN-ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj",
         "projectName": "ConsoleBankingAppMvc",
-        "projectPath": "C:\\Users\\micha\\source\\repos\\ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj",
+        "projectPath": "C:\\Users\\micha\\src\\MSN-ConsoleBankingAppMvc\\ConsoleBankingAppMvc.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\micha\\source\\repos\\ConsoleBankingAppMvc\\obj\\",
+        "outputPath": "C:\\Users\\micha\\src\\MSN-ConsoleBankingAppMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\micha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
